@@ -1,0 +1,16 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://hips.hearstapps.com/esquire/assets/17/14/1491236947-screen-shot-2017-04-03-at-121836-pm.png);">
+  <p> <%= link_to "Go back to the lists", lists_path, class:'btn btn-primary' %> </p>
+  <div class="text-center">
+    <h1>ADD A NEW LIST</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <%= simple_form_for @list do |l| %>
+      <%= l.input :name %>
+      <%= l.association :movies, collection: Movie.all %>
+      <%= l.button :submit, class:'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
